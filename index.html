@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Autumn Grillz | Bold Flavors, Warmer Moments</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #1a120b 0%, #2c1e12 100%);
+            font-family: 'Segoe UI', 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+            padding: 2rem 1rem;
+            color: #f5e7d9;
+        }
+
+        /* main card container */
+        .menu-container {
+            max-width: 780px;
+            margin: 0 auto;
+            background: #fef9ef;
+            background-image: radial-gradient(circle at 10% 20%, rgba(230, 190, 140, 0.08) 2%, transparent 2.5%);
+            background-size: 28px 28px;
+            border-radius: 52px 52px 48px 48px;
+            overflow: hidden;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* header autumn vibe */
+        .hero {
+            background: #2b2118;
+            padding: 2rem 1.5rem 1.8rem;
+            text-align: center;
+            border-bottom: 6px solid #d9a13b;
+        }
+
+        .brand {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #e7b34b;
+            text-shadow: 2px 2px 0 #4a2a18;
+            word-break: keep-all;
+        }
+
+        .brand span {
+            font-size: 1.2rem;
+            display: inline-block;
+            background: #e7b34b20;
+            padding: 0 6px;
+            border-radius: 40px;
+        }
+
+        .tagline {
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #f0cf9f;
+            margin-top: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        /* payment & contact demo card */
+        .demo-panel {
+            background: #2c241e;
+            margin: 20px 20px 0 20px;
+            border-radius: 36px;
+            padding: 1.2rem 1.2rem;
+            box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
+            border: 1px solid #d9a13b40;
+        }
+
+        .demo-title {
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #e7b34b;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .demo-title i {
+            font-size: 1.2rem;
+        }
+
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 14px;
+            background: #1f1914;
+            padding: 14px 18px;
+            border-radius: 28px;
+            margin-bottom: 8px;
+        }
+
+        .contact-item {
+            flex: 1;
+            min-width: 130px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            background: #362b22;
+            padding: 8px 14px;
+            border-radius: 60px;
+            color: #ffefcf;
+            font-weight: 500;
+        }
+
+        .contact-item strong {
+            color: #e7b34b;
+            font-weight: 700;
+        }
+
+        .demo-warning {
+            font-size: 0.7rem;
+            text-align: center;
+            margin-top: 12px;
+            background: #e7b34b20;
+            padding: 6px;
+            border-radius: 60px;
+            color: #deb887;
+            letter-spacing: 0.3px;
+        }
+
+        /* menu sections */
+        .menu-content {
+            padding: 16px 24px 32px 24px;
+        }
+
+        .section-title {
+            font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+            font-size: 1.7rem;
+            font-weight: 800;
+            margin: 28px 0 18px 0;
+            padding-bottom: 8px;
+            border-bottom: 4px double #e7b34b;
+            display: inline-block;
+            color: #3e2a22;
+            letter-spacing: -0.3px;
+        }
+
+        .section-title:first-of-type {
+            margin-top: 8px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 12px 0;
+            border-bottom: 1px dashed #ddceb5;
+        }
+
+        .item-name {
+            font-size: 1.13rem;
+            font-weight: 600;
+            color: #2b2b1f;
+            background: #fff6e8;
+            padding: 2px 8px;
+            border-radius: 30px;
+        }
+
+        .item-price {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: #ab6f2f;
+            background: #fef1e0;
+            padding: 2px 12px;
+            border-radius: 50px;
+        }
+
+        .item-price:before {
+            content: "Br ";
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* order guide demo */
+        .order-guide {
+            background: #fffbee;
+            margin-top: 36px;
+            padding: 18px 20px;
+            border-radius: 32px;
+            border: 1px solid #e7c48b;
+            box-shadow: 0 6px 0 #e2c294;
+        }
+
+        .order-guide h3 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.2rem;
+            color: #552e12;
+            margin-bottom: 12px;
+        }
+
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.92rem;
+            color: #3c2c1c;
+            background: white;
+            padding: 10px 15px;
+            border-radius: 80px;
+        }
+
+        .step-num {
+            background: #e7b34b;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #1f1a12;
+        }
+
+        /* footer demo note */
+        .demo-footer {
+            text-align: center;
+            padding: 18px 20px 22px;
+            background: #fff2e2;
+            border-top: 2px solid #e7b34b;
+            font-size: 0.7rem;
+            color: #784e1e;
+            font-weight: 500;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #e7b34b, transparent);
+            margin: 8px 0;
+        }
+
+        /* responsive */
+        @media (max-width: 550px) {
+            .contact-row {
+                flex-direction: column;
+            }
+            .menu-content {
+                padding: 12px 18px 28px;
+            }
+            .brand {
+                font-size: 2rem;
+            }
+            .section-title {
+                font-size: 1.4rem;
+            }
+            .item-name {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="menu-container">
+    <div class="hero">
+        <div class="brand">AUTUMN GRILLZ</div>
+        <div class="tagline">BOLD FLAVORS . WARMER MOMENTS</div>
+    </div>
+
+    <!-- DEMO PAYMENT & CONTACT SECTION (realistic demo for client) -->
+    <div class="demo-panel">
+        <div class="demo-title">
+            <span>📞⚡</span> DEMO CONTACT & PAYMENT OPTIONS
+        </div>
+        <div class="contact-row">
+            <div class="contact-item">📱 Phone: <strong>09XX XXX XXX</strong> <span style="font-size:0.7rem;">(Demo)</span></div>
+            <div class="contact-item">💚 Telebirr: <strong>09XX XXX XXX</strong> <span style="font-size:0.7rem;">(Send payment)</span></div>
+        </div>
+        <div class="contact-row">
+            <div class="contact-item">🏦 Bank (Demo): <strong>Commercial Bank of Ethiopia</strong></div>
+            <div class="contact-item">📘 Account: <strong>Autumn Grillz Trading</strong></div>
+        </div>
+        <div class="contact-row" style="justify-content: center;">
+            <div class="contact-item">💳 Account Number: <strong>1000-12345678-01</strong> <span style="font-size:0.7rem;">(DEMO)</span></div>
+        </div>
+        <div class="demo-warning">
+            🔸 DEMO ENVIRONMENT – for client presentation only. All payment details are placeholders.
+        </div>
+    </div>
+
+    <div class="menu-content">
+        <!-- BURGERS -->
+        <div>
+            <div class="section-title">🍔 BURGERS</div>
+            <div class="menu-item">
+                <span class="item-name">Beef Burger</span>
+                <span class="item-price">530</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Cheese Burger</span>
+                <span class="item-price">620</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Double Cheese Burger</span>
+                <span class="item-price">800</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">BBQ Burger</span>
+                <span class="item-price">620</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Double BBQ</span>
+                <span class="item-price">800</span>
+            </div>
+        </div>
+
+        <!-- SLICE PIZZAS -->
+        <div>
+            <div class="section-title">🍕 SLICE PIZZAS</div>
+            <div class="menu-item">
+                <span class="item-name">Margherita Slice</span>
+                <span class="item-price">250</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Chicken Slice</span>
+                <span class="item-price">300</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Tuna Slice</span>
+                <span class="item-price">300</span>
+            </div>
+        </div>
+
+        <!-- STEAK SANDWICH -->
+        <div>
+            <div class="section-title">🥩 STEAK SANDWICH</div>
+            <div class="menu-item">
+                <span class="item-name">Steak Sandwich</span>
+                <span class="item-price">800</span>
+            </div>
+        </div>
+
+        <!-- FRIES -->
+        <div>
+            <div class="section-title">🍟 FRIES</div>
+            <div class="menu-item">
+                <span class="item-name">Fries</span>
+                <span class="item-price">350</span>
+            </div>
+        </div>
+
+        <!-- DEMO ORDER INSTRUCTION & HOW TO USE Telebirr / Bank demo -->
+        <div class="order-guide">
+            <h3>📋 HOW TO ORDER (Demo Flow)</h3>
+            <div class="steps">
+                <div class="step"><span class="step-num">1</span> Call or send Telebirr payment to <strong>09XX XXX XXX</strong> (Demo)</div>
+                <div class="step"><span class="step-num">2</span> Or transfer to demo bank account: <strong>1000-12345678-01</strong></div>
+                <div class="step"><span class="step-num">3</span> Share your name + order details via text or call.</div>
+                <div class="step"><span class="step-num">4</span> Food prepared for pickup/delivery – demo only.</div>
+            </div>
+            <hr>
+            <div style="font-size:0.8rem; text-align:center; margin-top: 12px;">💡 Telebirr & Bank details are demo placeholders to showcase integration.</div>
+        </div>
+    </div>
+
+    <div class="demo-footer">
+        ⚡ DEMO VERSION – For Client Presentation Only ⚡<br>
+        Autumn Grillz | Authentic flavors • All prices in Ethiopian Birr (Demo)
+    </div>
+</div>
+</body>
+</html>
