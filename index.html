@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Autumn Grillz | Bold Flavors, Warmer Moments</title>
+    <title>Autumn Grillz | Menu & Demo Order</title>
     <style>
         * {
             margin: 0;
@@ -12,372 +12,439 @@
         }
 
         body {
-            background: linear-gradient(145deg, #1a120b 0%, #2c1e12 100%);
-            font-family: 'Segoe UI', 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1e130c 0%, #2f241b 100%);
+            font-family: 'Inter', system-ui, 'Segoe UI', 'Poppins', sans-serif;
             padding: 2rem 1rem;
-            color: #f5e7d9;
+            color: #f5ebe0;
         }
 
-        /* main card container */
-        .menu-container {
-            max-width: 780px;
+        /* main card */
+        .menu-wrapper {
+            max-width: 1100px;
             margin: 0 auto;
-            background: #fef9ef;
-            background-image: radial-gradient(circle at 10% 20%, rgba(230, 190, 140, 0.08) 2%, transparent 2.5%);
-            background-size: 28px 28px;
-            border-radius: 52px 52px 48px 48px;
+            background: #fffaf2;
+            border-radius: 56px;
             overflow: hidden;
-            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 30px 45px -15px rgba(0, 0, 0, 0.5);
         }
 
-        /* header autumn vibe */
-        .hero {
-            background: #2b2118;
-            padding: 2rem 1.5rem 1.8rem;
+        /* hero autumn */
+        .hero-grill {
+            background: #1f1710;
+            padding: 2rem 2rem 1.5rem;
             text-align: center;
-            border-bottom: 6px solid #d9a13b;
+            border-bottom: 5px solid #e2a13b;
         }
 
-        .brand {
-            font-size: 2.8rem;
+        .brand-name {
+            font-size: 3rem;
             font-weight: 800;
-            letter-spacing: 2px;
-            color: #e7b34b;
-            text-shadow: 2px 2px 0 #4a2a18;
-            word-break: keep-all;
-        }
-
-        .brand span {
-            font-size: 1.2rem;
-            display: inline-block;
-            background: #e7b34b20;
-            padding: 0 6px;
-            border-radius: 40px;
+            letter-spacing: 3px;
+            color: #efb555;
+            text-shadow: 3px 3px 0 #4f2d12;
         }
 
         .tagline {
-            font-family: 'Georgia', serif;
-            font-style: italic;
             font-size: 1.1rem;
-            color: #f0cf9f;
-            margin-top: 10px;
+            font-weight: 400;
+            font-style: italic;
+            color: #f0cf9a;
+            margin-top: 8px;
             letter-spacing: 0.5px;
         }
 
-        /* payment & contact demo card */
+        /* demo panel */
         .demo-panel {
-            background: #2c241e;
-            margin: 20px 20px 0 20px;
-            border-radius: 36px;
-            padding: 1.2rem 1.2rem;
-            box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
-            border: 1px solid #d9a13b40;
+            background: #2a211a;
+            margin: 25px 25px 0 25px;
+            border-radius: 40px;
+            padding: 1rem 1.6rem;
+            border: 1px solid #e2a13b80;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
 
         .demo-title {
-            font-size: 1rem;
-            font-weight: 600;
+            font-size: 0.85rem;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #e7b34b;
+            color: #eeb76b;
             display: flex;
             align-items: center;
             gap: 8px;
             margin-bottom: 12px;
         }
 
-        .demo-title i {
-            font-size: 1.2rem;
-        }
-
-        .contact-row {
+        .contact-grid {
             display: flex;
             flex-wrap: wrap;
+            gap: 12px;
             justify-content: space-between;
-            gap: 14px;
-            background: #1f1914;
-            padding: 14px 18px;
-            border-radius: 28px;
             margin-bottom: 8px;
         }
 
-        .contact-item {
+        .contact-card {
             flex: 1;
-            min-width: 130px;
+            background: #1e1712;
+            border-radius: 60px;
+            padding: 8px 16px;
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 0.95rem;
-            background: #362b22;
-            padding: 8px 14px;
-            border-radius: 60px;
-            color: #ffefcf;
+            font-size: 0.9rem;
             font-weight: 500;
+            color: #fbebcd;
         }
 
-        .contact-item strong {
-            color: #e7b34b;
-            font-weight: 700;
+        .contact-card strong {
+            color: #efb86b;
         }
 
-        .demo-warning {
-            font-size: 0.7rem;
+        .demo-note {
             text-align: center;
+            font-size: 0.7rem;
             margin-top: 12px;
-            background: #e7b34b20;
-            padding: 6px;
-            border-radius: 60px;
-            color: #deb887;
-            letter-spacing: 0.3px;
+            background: #e2a13b20;
+            padding: 5px;
+            border-radius: 40px;
+            color: #eec28d;
         }
 
-        /* menu sections */
-        .menu-content {
-            padding: 16px 24px 32px 24px;
+        /* main menu grid with images */
+        .menu-inner {
+            padding: 28px 28px 24px 28px;
         }
 
-        .section-title {
-            font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
-            font-size: 1.7rem;
+        .category {
+            margin-bottom: 2.2rem;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 1.2rem;
+            border-left: 6px solid #e2a13b;
+            padding-left: 16px;
+        }
+
+        .category-header h2 {
+            font-size: 1.8rem;
             font-weight: 800;
-            margin: 28px 0 18px 0;
-            padding-bottom: 8px;
-            border-bottom: 4px double #e7b34b;
-            display: inline-block;
-            color: #3e2a22;
+            color: #35271c;
             letter-spacing: -0.3px;
         }
 
-        .section-title:first-of-type {
-            margin-top: 8px;
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 24px;
         }
 
-        .menu-item {
+        .food-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s;
+        }
+
+        .food-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 28px rgba(0, 0, 0, 0.12);
+        }
+
+        .img-placeholder {
+            background: #f3ede5;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid #f0e2d0;
+        }
+
+        .food-icon {
+            font-size: 4rem;
+            filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1));
+        }
+
+        .card-info {
+            padding: 14px 16px 18px;
+        }
+
+        .card-info h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #3d2a1a;
             display: flex;
             justify-content: space-between;
             align-items: baseline;
             flex-wrap: wrap;
-            gap: 8px;
-            padding: 12px 0;
-            border-bottom: 1px dashed #ddceb5;
         }
 
-        .item-name {
-            font-size: 1.13rem;
-            font-weight: 600;
-            color: #2b2b1f;
-            background: #fff6e8;
-            padding: 2px 8px;
-            border-radius: 30px;
-        }
-
-        .item-price {
+        .price {
+            color: #b5621a;
             font-weight: 800;
             font-size: 1.2rem;
-            color: #ab6f2f;
-            background: #fef1e0;
+            background: #fef1e2;
             padding: 2px 12px;
-            border-radius: 50px;
+            border-radius: 40px;
         }
 
-        .item-price:before {
+        .price:before {
             content: "Br ";
-            font-weight: 500;
-            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .desc-demo {
+            font-size: 0.75rem;
+            color: #ad8b66;
+            margin-top: 6px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         /* order guide demo */
-        .order-guide {
-            background: #fffbee;
-            margin-top: 36px;
-            padding: 18px 20px;
+        .order-steps {
+            background: #fff6ea;
             border-radius: 32px;
-            border: 1px solid #e7c48b;
-            box-shadow: 0 6px 0 #e2c294;
+            padding: 18px 24px;
+            margin: 32px 0 16px;
+            border: 1px solid #e7c282;
         }
 
-        .order-guide h3 {
+        .order-steps h3 {
             display: flex;
             align-items: center;
             gap: 8px;
             font-size: 1.2rem;
-            color: #552e12;
-            margin-bottom: 12px;
+            color: #633f18;
+            margin-bottom: 14px;
         }
 
-        .steps {
+        .step-row {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
             gap: 12px;
+            justify-content: space-between;
         }
 
-        .step {
+        .step-badge {
+            background: #fff2e2;
+            border-radius: 48px;
+            padding: 8px 20px;
+            flex: 1;
+            font-size: 0.85rem;
             display: flex;
             align-items: center;
             gap: 12px;
-            font-size: 0.92rem;
-            color: #3c2c1c;
-            background: white;
-            padding: 10px 15px;
-            border-radius: 80px;
+            font-weight: 500;
+            color: #4e321b;
+            border: 1px solid #eedbaa;
         }
 
-        .step-num {
-            background: #e7b34b;
+        .step-number {
+            background: #e2a13b;
             width: 26px;
             height: 26px;
-            border-radius: 50%;
+            border-radius: 30px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            color: #1f1a12;
+            color: #251d12;
         }
 
-        /* footer demo note */
-        .demo-footer {
+        .footer-demo {
             text-align: center;
-            padding: 18px 20px 22px;
-            background: #fff2e2;
-            border-top: 2px solid #e7b34b;
+            padding: 18px;
+            background: #fff2e5;
+            border-top: 2px solid #e2a13b;
             font-size: 0.7rem;
-            color: #784e1e;
             font-weight: 500;
+            color: #784e1e;
         }
 
         hr {
             border: none;
             height: 1px;
-            background: linear-gradient(90deg, transparent, #e7b34b, transparent);
-            margin: 8px 0;
+            background: linear-gradient(90deg, transparent, #e2a13b, transparent);
+            margin: 12px 0;
         }
 
-        /* responsive */
-        @media (max-width: 550px) {
-            .contact-row {
-                flex-direction: column;
-            }
-            .menu-content {
-                padding: 12px 18px 28px;
-            }
-            .brand {
+        @media (max-width: 650px) {
+            .brand-name {
                 font-size: 2rem;
             }
-            .section-title {
-                font-size: 1.4rem;
+            .menu-inner {
+                padding: 20px;
             }
-            .item-name {
-                font-size: 1rem;
+            .category-header h2 {
+                font-size: 1.5rem;
+            }
+            .contact-grid {
+                flex-direction: column;
+            }
+            .step-row {
+                flex-direction: column;
             }
         }
     </style>
 </head>
 <body>
-<div class="menu-container">
-    <div class="hero">
-        <div class="brand">AUTUMN GRILLZ</div>
+<div class="menu-wrapper">
+    <div class="hero-grill">
+        <div class="brand-name">🍂 AUTUMN GRILLZ</div>
         <div class="tagline">BOLD FLAVORS . WARMER MOMENTS</div>
     </div>
 
-    <!-- DEMO PAYMENT & CONTACT SECTION (realistic demo for client) -->
+    <!-- DEMO payment + contact info (placeholders for client) -->
     <div class="demo-panel">
         <div class="demo-title">
-            <span>📞⚡</span> DEMO CONTACT & PAYMENT OPTIONS
+            📱💳 DEMO CONTACT & PAYMENT (Presentation Only)
         </div>
-        <div class="contact-row">
-            <div class="contact-item">📱 Phone: <strong>09XX XXX XXX</strong> <span style="font-size:0.7rem;">(Demo)</span></div>
-            <div class="contact-item">💚 Telebirr: <strong>09XX XXX XXX</strong> <span style="font-size:0.7rem;">(Send payment)</span></div>
+        <div class="contact-grid">
+            <div class="contact-card">📞 Phone: <strong>09XX XXX XXX</strong> <span style="font-size:0.7rem;">(Demo)</span></div>
+            <div class="contact-card">💚 Telebirr: <strong>09XX XXX XXX</strong> <span>(Send payment)</span></div>
+            <div class="contact-card">🏦 Bank: <strong>Commercial Bank of Ethiopia</strong></div>
         </div>
-        <div class="contact-row">
-            <div class="contact-item">🏦 Bank (Demo): <strong>Commercial Bank of Ethiopia</strong></div>
-            <div class="contact-item">📘 Account: <strong>Autumn Grillz Trading</strong></div>
+        <div class="contact-grid">
+            <div class="contact-card">📘 Account Name: <strong>Autumn Grillz Trading</strong></div>
+            <div class="contact-card">💳 Account №: <strong>1000-12345678-01</strong> <span style="font-size:0.7rem;">(DEMO)</span></div>
         </div>
-        <div class="contact-row" style="justify-content: center;">
-            <div class="contact-item">💳 Account Number: <strong>1000-12345678-01</strong> <span style="font-size:0.7rem;">(DEMO)</span></div>
-        </div>
-        <div class="demo-warning">
-            🔸 DEMO ENVIRONMENT – for client presentation only. All payment details are placeholders.
+        <div class="demo-note">
+            🔸 Demo environment – all payment details are placeholders for client review. Not for real transactions.
         </div>
     </div>
 
-    <div class="menu-content">
-        <!-- BURGERS -->
-        <div>
-            <div class="section-title">🍔 BURGERS</div>
-            <div class="menu-item">
-                <span class="item-name">Beef Burger</span>
-                <span class="item-price">530</span>
+    <div class="menu-inner">
+        <!-- BURGERS with placeholder food images (emoji as free image placeholder) -->
+        <div class="category">
+            <div class="category-header">
+                <h2>🍔 BURGERS</h2>
             </div>
-            <div class="menu-item">
-                <span class="item-name">Cheese Burger</span>
-                <span class="item-price">620</span>
-            </div>
-            <div class="menu-item">
-                <span class="item-name">Double Cheese Burger</span>
-                <span class="item-price">800</span>
-            </div>
-            <div class="menu-item">
-                <span class="item-name">BBQ Burger</span>
-                <span class="item-price">620</span>
-            </div>
-            <div class="menu-item">
-                <span class="item-name">Double BBQ</span>
-                <span class="item-price">800</span>
-            </div>
-        </div>
-
-        <!-- SLICE PIZZAS -->
-        <div>
-            <div class="section-title">🍕 SLICE PIZZAS</div>
-            <div class="menu-item">
-                <span class="item-name">Margherita Slice</span>
-                <span class="item-price">250</span>
-            </div>
-            <div class="menu-item">
-                <span class="item-name">Chicken Slice</span>
-                <span class="item-price">300</span>
-            </div>
-            <div class="menu-item">
-                <span class="item-name">Tuna Slice</span>
-                <span class="item-price">300</span>
-            </div>
-        </div>
-
-        <!-- STEAK SANDWICH -->
-        <div>
-            <div class="section-title">🥩 STEAK SANDWICH</div>
-            <div class="menu-item">
-                <span class="item-name">Steak Sandwich</span>
-                <span class="item-price">800</span>
+            <div class="items-grid">
+                <div class="food-card">
+                    <div class="img-placeholder"><div class="food-icon">🍔🔥</div></div>
+                    <div class="card-info">
+                        <h3>Beef Burger <span class="price">530</span></h3>
+                        <div class="desc-demo">🥩 juicy beef patty · grilled onions</div>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <div class="img-placeholder"><div class="food-icon">🧀🍔</div></div>
+                    <div class="card-info">
+                        <h3>Cheese Burger <span class="price">620</span></h3>
+                        <div class="desc-demo">🧀 cheddar cheese melt · classic sauce</div>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <div class="img-placeholder"><div class="food-icon">🧀🧀🍔</div></div>
+                    <div class="card-info">
+                        <h3>Double Cheese Burger <span class="price">800</span></h3>
+                        <div class="desc-demo">double patty · double cheese stack</div>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <div class="img-placeholder"><div class="food-icon">🍔🍯</div></div>
+                    <div class="card-info">
+                        <h3>BBQ Burger <span class="price">620</span></h3>
+                        <div class="desc-demo">smokey BBQ glaze · crispy onion</div>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <div class="img-placeholder"><div class="food-icon">🔥🍔🔥</div></div>
+                    <div class="card-info">
+                        <h3>Double BBQ <span class="price">800</span></h3>
+                        <div class="desc-demo">double beef · double BBQ bliss</div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- FRIES -->
-        <div>
-            <div class="section-title">🍟 FRIES</div>
-            <div class="menu-item">
-                <span class="item-name">Fries</span>
-                <span class="item-price">350</span>
+        <!-- SLICE PIZZA -->
+        <div class="category">
+            <div class="category-header">
+                <h2>🍕 SLICE PIZZAS</h2>
+            </div>
+            <div class="items-grid">
+                <div class="food-card">
+                    <div class="img-placeholder"><div class="food-icon">🍅🧀🍕</div></div>
+                    <div class="card-info">
+                        <h3>Margherita Slice <span class="price">250</span></h3>
+                        <div class="desc-demo">tomato · mozzarella · basil</div>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <div class="img-placeholder"><div class="food-icon">🍗🍕</div></div>
+                    <div class="card-info">
+                        <h3>Chicken Slice <span class="price">300</span></h3>
+                        <div class="desc-demo">grilled chicken · creamy sauce</div>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <div class="img-placeholder"><div class="food-icon">🐟🍕</div></div>
+                    <div class="card-info">
+                        <h3>Tuna Slice <span class="price">300</span></h3>
+                        <div class="desc-demo">tuna · capsicum · melted cheese</div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- DEMO ORDER INSTRUCTION & HOW TO USE Telebirr / Bank demo -->
-        <div class="order-guide">
-            <h3>📋 HOW TO ORDER (Demo Flow)</h3>
-            <div class="steps">
-                <div class="step"><span class="step-num">1</span> Call or send Telebirr payment to <strong>09XX XXX XXX</strong> (Demo)</div>
-                <div class="step"><span class="step-num">2</span> Or transfer to demo bank account: <strong>1000-12345678-01</strong></div>
-                <div class="step"><span class="step-num">3</span> Share your name + order details via text or call.</div>
-                <div class="step"><span class="step-num">4</span> Food prepared for pickup/delivery – demo only.</div>
+        <!-- STEAK SANDWICH & FRIES combined style for variety -->
+        <div class="category">
+            <div class="category-header">
+                <h2>🥩 STEAK SANDWICH</h2>
+            </div>
+            <div class="items-grid">
+                <div class="food-card">
+                    <div class="img-placeholder"><div class="food-icon">🥩🥖🔥</div></div>
+                    <div class="card-info">
+                        <h3>Steak Sandwich <span class="price">800</span></h3>
+                        <div class="desc-demo">tender steak strips · garlic aioli · toasted bun</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <div class="category-header">
+                <h2>🍟 FRIES & SIDES</h2>
+            </div>
+            <div class="items-grid">
+                <div class="food-card">
+                    <div class="img-placeholder"><div class="food-icon">🍟✨</div></div>
+                    <div class="card-info">
+                        <h3>Fries <span class="price">350</span></h3>
+                        <div class="desc-demo">golden crisp · seasoned salt · dip included</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DEMO ORDER GUIDE WITH TELEBIRR/BANK MOCK -->
+        <div class="order-steps">
+            <h3>📋 HOW TO ORDER (Demo integration)</h3>
+            <div class="step-row">
+                <div class="step-badge"><span class="step-number">1</span> 📞 Call / SMS: <strong>09XX XXX XXX</strong> (Demo)</div>
+                <div class="step-badge"><span class="step-number">2</span> 💚 Telebirr to <strong>09XX XXX XXX</strong> (placeholder)</div>
+                <div class="step-badge"><span class="step-number">3</span> 🏦 Bank transfer: <strong>1000-12345678-01</strong></div>
+                <div class="step-badge"><span class="step-number">4</span> 📱 Send order details & receive pickup time</div>
             </div>
             <hr>
-            <div style="font-size:0.8rem; text-align:center; margin-top: 12px;">💡 Telebirr & Bank details are demo placeholders to showcase integration.</div>
+            <div style="font-size:0.75rem; text-align:center; margin-top: 12px; color:#a2713a;">
+                ⚡ Telebirr & Bank details are demo placeholders to showcase digital payment flow.
+            </div>
         </div>
     </div>
 
-    <div class="demo-footer">
-        ⚡ DEMO VERSION – For Client Presentation Only ⚡<br>
-        Autumn Grillz | Authentic flavors • All prices in Ethiopian Birr (Demo)
+    <div class="footer-demo">
+        🍂 AUTUMN GRILLZ – DEMO VERSION FOR CLIENT PRESENTATION 🍂<br>
+        All prices in Ethiopian Birr (Demo). Food images are illustrative placeholders.
     </div>
 </div>
 </body>
